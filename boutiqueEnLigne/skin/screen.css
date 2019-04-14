@@ -1,0 +1,541 @@
+/* commun à toutes les pages*/
+*{
+    box-sizing: border-box;
+}
+body{
+    max-width: 1600px;    
+    min-height: 100vh;
+    margin: auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
+}
+a{
+    color:black;    
+    text-decoration: none;
+    margin: 0;
+    padding:0;
+ }
+  
+ .feedback{
+     padding:2px;
+     text-align: center;
+     max-height: 2em;
+     background-color:rgb(82, 247, 120);
+     border:1px ;
+ }
+/*Pour l'entête, dans la fonction navig()' */
+.navig,.entete{
+    display:grid;    
+}
+
+.navig >li{
+    font-weight: bold;    
+    border-left:1px solid black;
+    text-decoration: none;
+    height: 100%;
+    transition-duration: 0.5s;
+}
+
+.entete {
+    width: 100%;
+    margin:auto;
+    padding:0;
+    grid-template-columns: 180px 1fr 1fr;   
+    background-color: #8a8ad9;
+}
+.menuNav{
+    float: right;
+}
+.navig{
+  float: left;
+  width: 100%;
+  height: 100%;
+  grid-template-columns:1fr 1fr 150px 150px;
+  background: #8a8ad9;;
+  list-style: none;
+  align-items: end;
+  margin:0;
+  padding: 0;
+  text-align: center;
+
+}
+
+.logo, .panier, .connexion, .recherche{/*commun à tous les logo de la barre */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.logo{
+    background-image: url(images/logo.jpg);
+    height: 100%;
+    width: 100%;
+    background-position-x: 12px;
+}
+
+.connexion{    
+    background-image: url(images/profile.jpg); 
+    padding:40px 2px 0 10px; 
+    font-size: 9pt;
+    max-width:150px;
+
+}
+
+.panier{    
+    background-image: url(images/panier.jpg);   
+    min-width:50%;
+    height: 100%;
+}
+.panier span{
+    float: right;
+    width:50%;
+    align-items: center;
+}
+.panierCouleur{
+    color:red;
+}
+.connexionli{
+    grid-column: 3 / span 1;
+    transition:0.4s;
+    height: 100%; 
+    text-align: center;
+    float: right;
+}
+.connexionli a{
+    width:100%;
+    grid-template-columns: 1fr 1fr;
+}
+.connexionli p{
+    margin:0;
+}
+.paniervide{
+    display: grid;   
+    grid-template-columns:1fr 1fr;
+    align-items: end;
+    width:100%;
+}
+.paniervide span{
+    padding: 0;
+    margin: 0;
+    float: right;
+
+}
+
+.panierli a{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+
+}
+.panierli p{
+    text-align:center;
+    margin:0;
+    padding:0;    
+}
+/* .deroule{
+    display: none;
+} */
+
+/*barre de recherche*/
+
+.search-container{
+    height:80%;
+    display:grid;
+    grid-template-columns:1fr 40px;
+    justify-content:center;
+    align-self: center;
+}
+  input#search-bar{            
+      padding:0;
+      margin:0;
+     display: inline-block;
+    }
+   .recherche{ 
+       margin:0;
+       padding:0;
+       background-image: url(images/search.png);
+       
+   }
+   .recherche:hover{
+       background-color:gray;
+   }
+   .deroule{
+       margin:0;
+       padding: 0;
+       position: absolute;
+       display: none;
+
+   }
+   .deroule li{
+       width:160px;
+       height:auto;
+       background-color:rgb(90, 156, 238);
+       margin-bottom: 1px;
+       border:1px;       
+   }
+   .deroule li a{
+       display:block;
+   }
+   .deroule li :hover{
+       background-color: red;
+   }
+   .connexionli:hover .deroule{
+       position:absolute;
+       display: block;
+   }
+
+/*page d'accueil, liste d'articles*/
+
+.listeArticle{
+    border:2px;
+    width: 95%;
+    grid-template-columns: 1fr 1fr 1fr 1fr  ;
+    grid-gap: 0.5em;
+    display:grid;
+    list-style: none;
+    padding:0;
+    grid-gap:2em;
+    margin: auto;
+}
+
+.article{
+ grid-template-columns: 1fr 1fr 1fr;
+ border:1px solid #DCDCDC;
+ background-color: #FFFAFA;
+}
+
+a{
+    min-width: 100%;
+}
+.listeArticle figure{margin:0;
+padding:0;
+}
+
+.imageProduit{
+  width: 100%;
+  height: 410px;
+}
+.infoProduit{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin:0;
+    padding:0;
+    justify-content: space-between;
+    align-items: start;
+}
+.infoProduitLi{
+    color:black;
+}
+.prix{
+    justify-self:end;
+}
+ul li {
+    list-style: none;
+
+}
+.titreProduit{
+      font-weight: bold;
+      font-size: 17px;
+}
+/*******************************************************************************************/
+
+/*page de detail d'un article*/
+.detailArticle{        
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    margin: auto;
+    background-color: rgb(232, 236, 241);
+    height: 100%;
+    grid-gap: .2em;
+}
+.detailProduit{
+    grid-template-rows: repeat(5,1fr);
+    height: 100%;
+    align-items: center;
+    align-content: space-between;
+
+}
+.infoProduitDetail{
+    grid-template-rows: repeat(5,1fr);
+    grid-gap: 2em;
+
+}
+.LiProduit{
+padding: 2%;
+}
+#enstock{
+color: rgb(30, 149, 30);
+font-weight: bold;
+}
+.imgInfoproduit{
+    width:100%; 
+    margin: auto;
+ }
+ .infoProduitDetail ul{
+     margin:0;
+     padding:0;
+ }
+.ajouterPanier{
+     width: 50%;
+     padding: 2%;
+     border-radius: 5px;
+     font-size: 1.4em;
+     text-align: center;
+     font-weight: bold;
+     background-color: rgb(255, 140, 0);
+     justify-content: space-between;
+ }
+ .ImnglivraisonStan{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     background-image: url(images/long.png );
+     background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+     margin:2%;
+ }
+ .livraisonExp,.livraisonStan{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-gap: .2em;
+    margin: auto;
+ }
+ .ImnglivraisonExp{
+  
+    background-image: url(images/express.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+
+ 
+ }
+ .livraison{
+     margin: 6%;
+ }
+ .ajouterPanier:hover{
+    background-color: rgb(238, 144, 29);
+ }
+
+@media (max-width: 1280px) {    
+.search-container{/*barre de recherche*/
+    max-height:90px;
+    display:grid;
+    grid-template-columns:4fr 1fr;
+}
+    .listeArticle{
+        width: 100%;
+        grid-template-columns: 1fr  1fr 1fr ;
+        grid-gap: 0.5em;
+        display:grid;
+        list-style: none;
+        margin-top: 4em;
+    }
+    .article{
+        border:1px solid #DCDCDC;
+        background-color: #FFFAFA;
+    }
+    a{
+        min-width: 100%;
+    }
+    .listeArticle figure{margin:0;
+        padding:0;
+    }
+
+    .imageProduit{
+        width: 100%;
+        height: 80%;
+    }   
+/********************************************/
+    /*detail d'un article*/
+    .detailArticle{        
+        display:grid;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+        margin: auto;
+        font-size: 2em;
+        background-color: rgb(232, 236, 241);
+        height: 100%;
+        grid-gap: .2em;
+    }
+}
+@media (max-width: 900px) {
+    .search-container
+    .listeArticle{
+        background: darkred;
+        width: 100%;
+        grid-template-columns: 1fr  1fr ;
+        display:grid;
+        list-style: none;
+        margin-top: 4em;
+       }
+       .article{
+        border:1px solid #DCDCDC;
+
+        background-color: #FFFAFA;
+       }
+       a{
+           min-width: 100%;
+       }
+       .listeArticle figure{margin:0;
+       padding:0;
+       }
+
+       .imageProduit{
+         max-width: 300px;
+         height: 280px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .listeArticle{
+        width: 100%;
+        grid-template-columns: 1fr  1fr ;
+        grid-gap: 0.1em;
+        display:grid;
+        list-style: none;
+        margin-top: 2em;
+    }
+    .article{
+        border:0.3px solid #DCDCDC;
+        background-color: #FFFAFA;
+    }
+    a{
+        min-width: 100%;
+    }
+    .listeArticle figure{margin:0;
+        padding:0;
+    }
+
+    .imageProduit{
+        width: 100%;
+        height: 350px;
+    }   
+}
+
+/**********************************************************************************/
+/*page panier*/
+/* .divPanier{
+    display: grid;
+    grid-template-rows: auto;
+
+}
+.infoProduitPanier{
+    display: grid;
+    grid-template-columns: auto;
+    height: 100%;
+    width: 100%;
+} */
+.imageProduitPanier{
+    width: 100%;
+    
+}
+.infoProduitLi
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    padding: 5%;
+}
+
+#listProduitPanier{
+    border:2px;
+    width: 50%;
+    grid-template-columns: 1fr;
+    grid-gap: 0.1em;
+    display:grid;
+    list-style: none;
+    padding:0;
+    margin: auto;
+}
+.infoProduitPanier{
+    display: grid;
+ grid-template-columns: 1fr 5fr 1fr;
+ border:1px solid #DCDCDC;
+ background-color: #FFFAFA;
+ margin: 5%;
+}
+.SupAchPanierBtn{
+ display: grid;
+ grid-template-columns: 1fr;   
+ justify-self: end;
+ align-self: center;
+ align-content: center;
+ padding: 10%;
+}
+#prixProduit{
+    color:green;
+}
+
+/**********************************************************************************/
+/*page de connexion*/
+.formulaire{
+    background-color: #83909E;
+    padding: 8%;
+    margin: 10% 61% 10% 15%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap:1em;
+}
+
+.connexionPage{
+    width:100%;
+    margin: auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .0em;
+    height: 100%;
+}
+.imgLogin{
+    background-image: url(images/im3.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-height: 800px;
+}
+.logoForm{
+    background-image: url(images/logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 85px;
+    height:85px;
+  
+}
+
+.logotitCnx{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+}
+.pinscrir{    
+    margin:0;
+}
+.lieninsc{
+    text-align: center;
+    color :blue;
+    font-size: 13pt;
+}
+
+
+.rouge{
+    color:red;
+}
+/***********************************************************************/
+
+
+/*footer*/
+.footer {
+    background-color: #191970;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    max-height: 300px;
+}
+.footer li{
+    color: white;
+}

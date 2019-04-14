@@ -1,0 +1,102 @@
+/* commun à toutes les pages*/
+body{
+    width: 1600px;    
+    min-height: 100vh;
+    margin: auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
+}
+/*Pour l'entête, dans la fonction navig()' */
+.navig,.entete{
+    display:grid;    
+}
+
+.navig >li{
+    list-style: none;
+    font-size: 12pt;
+}
+
+.entete {
+    width: 100%;
+    margin:auto;
+    padding:0;
+    grid-template-columns: 180px 1fr 1fr;   
+    background-color: #FFEFD5;
+    align-items: center;
+}
+.navig{
+  grid-template-columns:1fr 1fr;
+  grid-gap: 2em;
+  margin:0;
+  padding:0;
+}
+
+.logo, .panier, .connexion, .recherche{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.connexionli{
+    
+}
+
+.panierli{}
+.logo{
+    background-image: url(images/logo.jpg);
+    padding: 30px;
+    background-position-x: 12px;
+}
+.connexion{    
+    background-image: url(images/profile.jpg);    
+    width: 30px;
+    padding:40px 15px 0 0; 
+    font-size: 9pt;
+    
+}
+.panier{
+    background-image: url(images/panier.jpg);   
+    padding:40px 2px 0 10px; 
+    font-size: 9pt;
+        width: 30px;
+
+}
+/*commun à toute la page*/
+a{
+   margin: 0;
+   padding:0;
+}
+ 
+/*barre de recherche*/
+
+form{
+    height:40px;
+    display:grid;
+    grid-template-columns:1fr 40px;
+    justify-content:center;
+}
+  input#search-bar{       
+     
+      padding:0;
+      margin:0;
+     display: inline-block;}
+   .recherche{
+       
+       margin:0;
+       padding:0;
+       background-image: url(images/search.png);
+       
+   }
+   .recherche:hover{
+       background-color:gray;
+   }
+
+.error{
+    color:red;
+}
+
+/*footer*/
+.footer{
+    display: grid;
+    grid-template: auto/ 1fr 1fr;
+}
